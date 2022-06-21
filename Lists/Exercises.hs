@@ -1,4 +1,8 @@
+{-# LANGUAGE TupleSections #-}
+
 module Lists.Exercises where
+
+import Data.Char (isUpper, toUpper)
 
 -- Exercise: EnumFromTo
 
@@ -96,3 +100,117 @@ p3 = length p2
 --    b) [1, 10, 20]
 --    c) [15, 15, 15]
 -- 6.
+
+-- Exercises: Filtering
+
+-- 1.
+multiOf3 = filter (\x -> rem x 3 == 0)
+
+-- 2.
+fp2 = length . multiOf3
+
+-- 3.
+myFilter = filter (\x -> x `notElem` ["the", "a", "an"]) . myWords
+
+-- Zipping exercises
+
+-- 1.
+myZip :: [a] -> [b] -> [(a, b)]
+myZip _ [] = []
+myZip [] _ = []
+myZip (x : xs) (y : ys) = (x, y) : myZip xs ys
+
+-- 2.
+myZipWith :: (a -> b -> c) -> [a] -> [b] -> [c]
+myZipWith _ _ [] = []
+myZipWith _ [] _ = []
+myZipWith f (x : xs) (y : ys) = f x y : myZipWith f xs ys
+
+-- 3.
+myZip' :: [a] -> [b] -> [(a, b)]
+myZip' = myZipWith (,)
+
+--- Chapter Exercises
+
+-- Data.Char
+-- 1. isUpper :: Char -> Bool
+--    toUpper :: Char -> Char
+
+-- 2.
+filterUpper = filter isUpper
+
+-- 3.
+capFst :: [Char] -> [Char]
+capFst "" = ""
+capFst (x : xs) = toUpper x : xs
+
+-- 4.
+toUpperAll :: [Char] -> [Char]
+toUpperAll "" = ""
+toUpperAll (x : xs) = toUpper x : toUpperAll xs
+
+-- 5. head :: [a] -> a
+fstCap xs = toUpper . head
+
+-- Ciphers
+-- see Cipher.hs
+
+-- Writing your own standard functions
+-- 1.
+myOr :: [Bool] -> Bool
+myOr [] = False
+myOr (x : xs) = x || myOr xs
+
+-- 2.
+myAny :: (a -> Bool) -> [a] -> Bool
+myAny _ [] = False
+myAny f (x : xs) = f x || myAny f xs
+
+-- 3.
+myElem :: Eq a => a -> [a] -> Bool
+myElem _ [] = False
+myElem x (y : ys) = x == y || myElem x ys
+
+myElem' :: (Foldable t, Eq a) => a -> t a -> Bool
+myElem' x = any (== x)
+
+-- 4.
+myReverse :: [a] -> [a]
+myReverse [] = []
+myReverse (x : xs) = myReverse xs ++ [x]
+
+-- 5.
+squish :: [[a]] -> [a]
+squish [] = []
+squish (xs : xss) = xs ++ squish xss
+
+-- 6.
+squishMap :: (a -> [b]) -> [a] -> [b]
+squishMap f = squish . map f
+
+-- 7.
+squishAgain :: [[a]] -> [a]
+squishAgain = squishMap id
+
+-- 8.
+myMaximumBy :: (a -> a -> Ordering) -> [a] -> a
+myMaximumBy _ [x] = x
+myMaximumBy f (x : y : xs) = case f x y of
+  GT -> myMaximumBy f (x : xs)
+  LT -> myMaximumBy f (y : xs)
+  EQ -> myMaximumBy f (x : xs)
+
+-- 9.
+myMinimumBy :: (a -> a -> Ordering) -> [a] -> a
+myMinimumBy _ [x] = x
+myMinimumBy f (x : y : xs) = case f x y of
+  GT -> myMinimumBy f (y : xs)
+  LT -> myMinimumBy f (x : xs)
+  EQ -> myMinimumBy f (y : xs)
+
+-- 10.
+myMaximum :: (Ord a) => [a] -> a
+myMaximum = myMaximumBy compare
+
+myMinimum :: (Ord a) => [a] -> a
+myMinimum = myMinimumBy compare
