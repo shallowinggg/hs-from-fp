@@ -1,4 +1,4 @@
-module FoldingList.Exercises where
+module FoldingLists.Exercises where
 
 -- Exercises: Understanding Folds
 

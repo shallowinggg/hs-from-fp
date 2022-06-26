@@ -38,13 +38,16 @@ myWords x = takeWhile (/= ' ') y : myWords (dropWhile (/= ' ') y)
   where
     y = dropWhile (== ' ') x
 
-mySplit :: (Char -> Bool) -> String -> [String]
+mySplit :: Char -> String -> [String]
 mySplit _ "" = []
-mySplit f x = takeWhile f y : myWords (dropWhile f y)
+mySplit c s =
+  if null y
+    then []
+    else takeWhile (/= c) y : mySplit c (dropWhile (/= c) y)
   where
-    y = dropWhile (not . f) x
+    y = dropWhile (== c) s
 
-myWords' = mySplit (/= ' ')
+myWords' = mySplit ' '
 
 -- Exercises: Comprehend Thy Lists
 
@@ -194,6 +197,7 @@ squishAgain = squishMap id
 
 -- 8.
 myMaximumBy :: (a -> a -> Ordering) -> [a] -> a
+myMaximumBy _ [] = error "empty list"
 myMaximumBy _ [x] = x
 myMaximumBy f (x : y : xs) = case f x y of
   GT -> myMaximumBy f (x : xs)
@@ -202,6 +206,7 @@ myMaximumBy f (x : y : xs) = case f x y of
 
 -- 9.
 myMinimumBy :: (a -> a -> Ordering) -> [a] -> a
+myMinimumBy _ [] = error "empty list"
 myMinimumBy _ [x] = x
 myMinimumBy f (x : y : xs) = case f x y of
   GT -> myMinimumBy f (y : xs)

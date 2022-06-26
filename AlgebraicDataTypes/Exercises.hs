@@ -1,6 +1,7 @@
 module AlgebraicDataTypes.Exercises where
 
-import Text.XHtml (menu)
+import Data.Char (toUpper)
+import Data.List (intercalate)
 
 data PugType = PugData
 
@@ -163,3 +164,27 @@ type Animal' =
 -- 2. c)
 -- 3. b)
 -- 4. c)
+
+--
+-- Language exercises
+
+-- 1.
+capitalizeWord :: String -> String
+capitalizeWord "" = ""
+capitalizeWord (c : cs) = toUpper c : cs
+
+-- 2.
+capitalizeParagraph :: String -> String
+capitalizeParagraph = intercalate "." . map go . wordsWhen '.'
+  where
+    go "" = ""
+    go (' ' : cs) = ' ' : go cs
+    go cs = capitalizeWord cs
+
+wordsWhen :: Char -> String -> [String]
+wordsWhen c [x] = if c == x then [""] else [[x]]
+wordsWhen c s = case dropWhile (== c) s of
+  "" -> []
+  s' -> w : wordsWhen c s''
+    where
+      (w, s'') = break (== c) s'
