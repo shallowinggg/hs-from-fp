@@ -59,6 +59,7 @@ test-suite morse-test
   main-is: Spec.hs
   other-modules:
       ArithTest
+      FunctorTest
       WordNumberTest
       Paths_morse
   hs-source-dirs:
