@@ -33,8 +33,8 @@ shouldEqual =
   ]
 
 -- The main function here is a small test -- to ensure you've written your function -- correctly.
-main :: IO ()
-main =
+poemLines :: IO ()
+poemLines =
   print $
     "Are they equal? "
       ++ show (myLines sentences == shouldEqual)

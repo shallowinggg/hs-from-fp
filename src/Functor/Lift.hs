@@ -30,8 +30,8 @@ thriceLifted = (fmap . fmap . fmap) replaceWithP
 thriceLifted' :: [Maybe [Char]] -> [Maybe [Char]]
 thriceLifted' = thriceLifted
 
-main :: IO ()
-main = do
+liftTest :: IO ()
+liftTest = do
   putStr "replaceWithP' lms:   "
   print (replaceWithP' lms)
   putStr "liftedReplace lms:   "

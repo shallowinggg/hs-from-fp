@@ -9,8 +9,8 @@ hello = "hello"
 world :: String
 world = "world"
 
-main :: IO ()
-main = do
+print3 :: IO ()
+print3 = do
   putStrLn myGreeting
   putStrLn secondGreeting
   where

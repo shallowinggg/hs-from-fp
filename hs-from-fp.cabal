@@ -38,6 +38,7 @@ library
       Applicative.Constant
       Applicative.FixerUpper
       Applicative.Identity
+      Applicative.List
       Applicative.Lookup
       BasicDataTypes.Exercise
       BuildingProjects.Cipher
@@ -112,6 +113,7 @@ test-suite hs-from-fp-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      Applicative.Apl1
       Applicative.BadMonoid
       Testing.ArithTest
       Testing.FunctorTest

@@ -1,4 +1,4 @@
 module Strings.Print1 where
 
-main :: IO ()
-main = putStrLn "Hello World!"
+print1 :: IO ()
+print1 = putStrLn "Hello World!"

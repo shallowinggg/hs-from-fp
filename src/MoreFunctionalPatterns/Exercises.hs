@@ -56,7 +56,7 @@ roundTrip a = read (show a)
 --             = (String -> a) String
 --             = a
 
-main = do
+roundTripTest = do
   print (roundTrip 4)
   print (id 4)
 

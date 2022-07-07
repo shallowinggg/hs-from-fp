@@ -74,8 +74,8 @@ testPostorder =
     else putStrLn "postorder failed check"
 
 -- acceptance test for mapTree
-main :: IO ()
-main = do
+mapTreeTest :: IO ()
+mapTreeTest = do
   if mapTree (+ 1) testTree' == mapExpected
     then print "yup okay!"
     else error "test failed!"

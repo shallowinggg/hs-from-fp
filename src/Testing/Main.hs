@@ -43,8 +43,8 @@ convertFromMorse = forever $ do
           putStrLn $ "ERROR: " ++ line
           exitFailure
 
-main :: IO ()
-main = do
+morse :: IO ()
+morse = do
   mode <- getArgs
   case mode of
     [arg] ->
