@@ -36,10 +36,12 @@ library
       AlgebraicDataTypes.Vehicle
       AlgebraicDataTypes.Vigenere
       Applicative.Constant
+      Applicative.Exercises
       Applicative.FixerUpper
       Applicative.Identity
       Applicative.List
       Applicative.Lookup
+      Applicative.Validation
       BasicDataTypes.Exercise
       BuildingProjects.Cipher
       FoldingLists.Database
@@ -115,6 +117,7 @@ test-suite hs-from-fp-test
   other-modules:
       Applicative.Apl1
       Applicative.BadMonoid
+      Applicative.ValidationTest
       Testing.ArithTest
       Testing.FunctorTest
       Testing.MorseTest
