@@ -51,12 +51,16 @@ library
       FoldingLists.Summary
       Functor.Exercises
       Functor.HeavyLifting
+      Functor.Law
       Functor.Lift
       Functor.Possibly
       Functor.Sum
       Lists.Cipher
       Lists.Exercises
       Lists.PoemLines
+      Monad.Bind
+      Monad.Exercises
+      Monad.Sum
       Monoid.Exercises
       Monoid.Optional
       MoreFunctionalPatterns.CaseExercises
@@ -117,7 +121,10 @@ test-suite hs-from-fp-test
   other-modules:
       Applicative.Apl1
       Applicative.BadMonoid
+      Applicative.ExercisesTest
       Applicative.ValidationTest
+      Monad.ExercisesTest
+      Monad.SumTest
       Testing.ArithTest
       Testing.FunctorTest
       Testing.MorseTest
