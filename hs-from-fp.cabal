@@ -44,6 +44,8 @@ library
       Applicative.Validation
       BasicDataTypes.Exercise
       BuildingProjects.Cipher
+      Foldable.Exercises
+      Foldable.LibraryFunctions
       FoldingLists.Database
       FoldingLists.Exercises
       FoldingLists.Review
@@ -69,6 +71,10 @@ library
       MoreFunctionalPatterns.GuardExercises
       MoreFunctionalPatterns.HOFExercises
       MoreFunctionalPatterns.PatternMatchExercises
+      Reader.Ask
+      Reader.ReaderPractice
+      Reader.ReadingComprehension
+      Reader.WarmUp
       Recursion.Demo
       Recursion.Exercises
       Signaling.Exercises
@@ -80,6 +86,8 @@ library
       Testing.Main
       Testing.Morse
       Testing.WordNumber
+      Traversable.Instances
+      Traversable.Tree
       TypeClass.EqExercises
       TypeClass.Exercises
       Types.ParametricityExercises
@@ -129,6 +137,8 @@ test-suite hs-from-fp-test
       Testing.FunctorTest
       Testing.MorseTest
       Testing.WordNumberTest
+      Traversable.InstancesTest
+      Traversable.TreeTest
       Paths_hs_from_fp
   hs-source-dirs:
       test
