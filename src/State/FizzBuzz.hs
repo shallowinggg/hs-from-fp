@@ -24,9 +24,5 @@ main1 =
   mapM_ putStrLn $
     reverse $ fizzbuzzList [1 .. 100]
 
-main :: IO ()
-main = do
-  let a = ""
-  putStrLn a
-  mapM_ putStrLn $
-    reverse $ fizzbuzzList [1 .. 10]
+fizzbuzzFromTo :: Integer -> Integer -> [String]
+fizzbuzzFromTo a b = fizzbuzzList [b, b - 1 .. a]
