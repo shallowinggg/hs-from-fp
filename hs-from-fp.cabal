@@ -78,6 +78,10 @@ library
       Recursion.Demo
       Recursion.Exercises
       Signaling.Exercises
+      State.Exercise
+      State.FizzBuzz
+      State.Moi
+      State.RollYourOwn
       Strings.Exercise
       Strings.Print1
       Strings.Print2
@@ -102,7 +106,9 @@ library
     , checkers
     , containers
     , hspec
+    , random
     , time
+    , transformers
   default-language: Haskell2010
 
 executable hs-from-fp-exe
@@ -120,7 +126,9 @@ executable hs-from-fp-exe
     , containers
     , hs-from-fp
     , hspec
+    , random
     , time
+    , transformers
   default-language: Haskell2010
 
 test-suite hs-from-fp-test
@@ -151,5 +159,7 @@ test-suite hs-from-fp-test
     , containers
     , hs-from-fp
     , hspec
+    , random
     , time
+    , transformers
   default-language: Haskell2010
