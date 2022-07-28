@@ -29,6 +29,7 @@ dependencies:
 - checkers
 - random
 - transformers
+- trifecta
 
 library:
   source-dirs: src
