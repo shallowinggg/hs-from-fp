@@ -44,6 +44,9 @@ library
       Applicative.Validation
       BasicDataTypes.Exercise
       BuildingProjects.Cipher
+      ComposingTypes.BiFunctor
+      ComposingTypes.Instances
+      ComposingTypes.Twinplicative
       Foldable.Exercises
       Foldable.LibraryFunctions
       FoldingLists.Database
