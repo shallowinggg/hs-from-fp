@@ -22,3 +22,10 @@ tupled' = do
   l <- cap
   r <- rev
   return (l, r)
+
+tupled'' :: [Char] -> ([Char], [Char])
+tupled'' =
+  cap
+    >>= \l ->
+      rev
+        >>= \r -> return (l, r)

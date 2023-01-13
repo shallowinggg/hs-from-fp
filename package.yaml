@@ -30,6 +30,9 @@ dependencies:
 - random
 - transformers
 - trifecta
+- aeson
+- bytestring
+- raw-strings-qq
 
 library:
   source-dirs: src

@@ -51,8 +51,8 @@ rollsToGetTwenty = go 0 0
     go sum count gen
       | sum >= 20 = count
       | otherwise =
-        let (die, nextGen) = randomR (1, 6) gen
-         in go (sum + die) (count + 1) nextGen
+          let (die, nextGen) = randomR (1, 6) gen
+           in go (sum + die) (count + 1) nextGen
 
 rollsToGetN :: Int -> StdGen -> Int
 rollsToGetN = go 0 0
@@ -61,8 +61,8 @@ rollsToGetN = go 0 0
     go sum count limit gen
       | sum >= limit = count
       | otherwise =
-        let (die, nextGen) = randomR (1, 6) gen
-         in go (sum + die) (count + 1) limit nextGen
+          let (die, nextGen) = randomR (1, 6) gen
+           in go (sum + die) (count + 1) limit nextGen
 
 rollsCountLogged ::
   Int ->
@@ -74,5 +74,5 @@ rollsCountLogged = go 0 0 []
     go sum count logs limit gen
       | sum >= limit = (count, logs)
       | otherwise =
-        let (die, nextGen) = randomR (1, 6) gen
-         in go (sum + die) (count + 1) (intToDie die : logs) limit nextGen
+          let (die, nextGen) = randomR (1, 6) gen
+           in go (sum + die) (count + 1) (intToDie die : logs) limit nextGen

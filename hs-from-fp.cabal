@@ -44,6 +44,10 @@ library
       Applicative.Validation
       BasicDataTypes.Exercise
       BuildingProjects.Cipher
+      ComposingTypes.BiFunctor
+      ComposingTypes.IdentityT
+      ComposingTypes.Instances
+      ComposingTypes.Twinplicative
       Foldable.Exercises
       Foldable.LibraryFunctions
       FoldingLists.Database
@@ -72,8 +76,10 @@ library
       MoreFunctionalPatterns.HOFExercises
       MoreFunctionalPatterns.PatternMatchExercises
       Parser.Exercises
+      Parser.Json
       Parser.ParsingFractions
       Parser.ParsingPractice
+      Parser.Try
       Reader.Ask
       Reader.ReaderPractice
       Reader.ReadingComprehension
@@ -104,12 +110,15 @@ library
       src
   build-depends:
       QuickCheck
+    , aeson
     , array
     , base >=4.7 && <5
+    , bytestring
     , checkers
     , containers
     , hspec
     , random
+    , raw-strings-qq
     , time
     , transformers
     , trifecta
@@ -124,13 +133,16 @@ executable hs-from-fp-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       QuickCheck
+    , aeson
     , array
     , base >=4.7 && <5
+    , bytestring
     , checkers
     , containers
     , hs-from-fp
     , hspec
     , random
+    , raw-strings-qq
     , time
     , transformers
     , trifecta
@@ -158,13 +170,16 @@ test-suite hs-from-fp-test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       QuickCheck
+    , aeson
     , array
     , base >=4.7 && <5
+    , bytestring
     , checkers
     , containers
     , hs-from-fp
     , hspec
     , random
+    , raw-strings-qq
     , time
     , transformers
     , trifecta
