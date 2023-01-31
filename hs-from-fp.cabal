@@ -48,6 +48,7 @@ library
       ComposingTypes.IdentityT
       ComposingTypes.Instances
       ComposingTypes.Twinplicative
+      Exception.Try
       Foldable.Exercises
       Foldable.LibraryFunctions
       FoldingLists.Database
@@ -67,6 +68,10 @@ library
       Monad.Bind
       Monad.Exercises
       Monad.Sum
+      MonadTransformer.EitherT
+      MonadTransformer.ReaderT
+      MonadTransformer.StateT
+      MonadTransformer.WrapItUp
       Monoid.Exercises
       Monoid.Optional
       MoreFunctionalPatterns.CaseExercises
